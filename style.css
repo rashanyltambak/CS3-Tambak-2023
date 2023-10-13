@@ -1,0 +1,40 @@
+body {
+    background-image: url("https://i.pinimg.com/564x/a1/38/33/a13833ddeba93da9d5b7062cbea49169.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: "Georgia", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    background-color: #ff69b4;
+    color: #fff;
+    border: 2px dotted #401596;
+	padding: 10px 15px;
+    width: 250px;
+    margin: 30px 20px 20px 20px;
+    auto margin: 0 ;
+}
+
+p {
+    text-align: justify;
+    background-color: #fff;
+    font-style: italic;
+    padding: 20px;
+    border: 3px solid #ff1493;
+    border-left: 3px solid black;
+    border-right: 3px double black;
+    border-top: 3px dashed black;
+    border-bottom: 3px dotted black;
+    width: 500px;
+    margin: 0 20px;
+}
+
+span {
+    font-weight: bold;
+    font-style: italic;
+    color: #ff69b4;
+    margin: 2px 5px;
+	}
