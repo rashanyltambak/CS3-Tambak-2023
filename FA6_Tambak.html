@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        a:link {
+            color: purple;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #7b52a1;
+            background-color: #c8b4db;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: #fd99ff;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        #div1 {
+            border-style: solid;
+            border-color: red;
+            border: 2px solid red;
+            width: 10%;
+            height: 10%;
+            padding: 3%;
+            margin-top: 1%;
+        }
+
+        #div2 {
+            border-style: dotted;
+            border-color: purple;
+            border: 2px solid purple;
+            width: 10%;
+            height: 10%;
+            padding: 3%;
+            margin-top: 1%;
+        }
+
+        a {
+            border-style: solid;
+            border-color: pink;
+            margin-right: 1%;
+        }
+
+        #div1:target {
+            background-color: #ba6bfa;
+            color: lightpink; /* Added line to change text color to light pink */
+        }
+
+        #div2:target {
+            background-color: #ba6bfa;
+        }
+
+        #div2:target {
+            border-color: green;
+            border-style: dotted;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="#div1"> First Link </a>
+    <a href="#div2"> Second Link </a>
+    <div id="div1"> Div1 </div>
+    <div id="div2"> Div2 </div>
+
+</body>
+
+</html>
