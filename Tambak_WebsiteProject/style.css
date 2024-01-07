@@ -1,0 +1,308 @@
+body {
+    font-family: Georgia;
+    margin: 0;
+    padding: 0;
+    background-color: #faf9f7;
+}
+
+
+header {
+    background-color: #a48bb1;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    max-width: 85px;
+    max-height: 75px;
+    border-radius: 10%;
+    margin-left: 10px;
+}
+
+.logo:hover{
+	transform: rotateY(150deg);
+}
+
+.nav-container {
+    margin-top: 30px; 
+}
+
+nav {
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    margin: 0 10px;
+    border: 1px solid #000;
+    padding: 5px 10px;
+}
+
+
+.header-content {
+    text-align: center;
+}
+
+.abt {
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: #000;
+    text-align: justify;
+}
+
+.photo {
+    max-width: 580px;
+    max-height: 550px;
+    vertical-align: middle;
+    float: left;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.hd {
+    font-size: 45px;
+    color: #000;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.moreinf {
+    background-color: #a48bb1;
+    font-size: 26px;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    border: 20px solid #faf9f7;
+    padding: 10px 15px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.abt2 {
+    font-size: 22px;
+    color: #000;
+    text-align: justify;
+    margin-top: 20px;
+}
+
+.quotes-container {
+    text-align: left;
+    padding: 20px;
+}
+
+.quote {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.quote-year {
+    font-size: 14px;
+    color: #000;
+}
+
+.q {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: justify;
+    margin-top: 95px;
+}
+
+
+.head {
+    font-size: 30px;
+    font-family: Verdana;
+    color: #000;
+}
+
+.head2 {
+    font-size: 27px;
+    color: #000;
+}
+
+.tp {
+    font-size: 26px;
+    font-family: Verdana;
+    color: #000;
+}
+
+p {
+    font-size: 23px;
+    color: #000;
+}
+
+article,
+aside,
+section {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    text-align: center;
+}
+
+/* Table styles */
+th {
+    color: white;
+    padding: 10px;
+	font-size: 20px;
+}
+
+td {
+    padding: 10px;
+	font-size: 20px;
+}
+
+th:nth-of-type(1) {
+    background-color: #A36FA5;
+}
+
+th:nth-of-type(2) {
+    background-color: #A4718B;
+}
+
+th:nth-of-type(3) {
+    background-color: #8B71A4;
+}
+
+tr:nth-of-type(even) {
+    background-color: #C5AFE0;
+}
+
+td:nth-of-type(1) {
+    font-family: Georgia;
+}
+
+.list-container {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.list-item {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.header {
+    background-color: #5A387D;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    margin: 0;
+}
+
+.header:hover{
+	transform: scale(0.5, 0.5);
+}
+
+.about {
+    font-size: 23px;
+    color: #000;
+}
+
+.sprite1,
+.sprite2 {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.sprite1 {
+	background: url('Screenshot 2024-01-07 014702.png') no-repeat 0 0;
+	width: 171px;
+	height: 171px;
+}
+	
+
+div.sprite1:hover {
+	background: url('Screenshot 2024-01-07 014702.png') no-repeat 0 0;
+	width: 171px;
+	height: 171px;
+	filter: brightness(70%);
+}
+
+.sprite2 {
+	background: url('Screenshot 2024-01-07 015626.png') no-repeat 0 0;
+	width: 170px;
+	height: 166px;
+}
+
+div.sprite2:hover {
+	background: url('Screenshot 2024-01-07 015626.png') no-repeat 0 0;
+	width: 171px;
+	height: 171px;
+	filter: brightness(70%);
+	
+}
+
+.contact-info {
+    margin-left: 25px;
+	font: black;
+	text-decoration: none;
+}
+
+.contact-section {
+    display: flex;
+    align-items: center;
+	justify-content: center; 
+    text-align: center;
+}
+
+.contact-info {
+    color: #000; 
+}
+
+.contact-info h2, .contact-info p {
+    font-size: 23px; 
+    margin: 5px 0; 
+}
+
+.contact-info a {
+    color: #000;  
+}
+
+
+
+
+.footer {
+    background-color: #9c7fa8;
+    color: #000;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0; 
+    width: 100%;
+}
+
+.footer p {
+    font-size: 18px;
+    color: #000; 
+}
+
+.footer a {
+    color: #000; 
+}
+
+.footer hr {
+    border: none;
+    height: 2px;
+    color: #fff;
+    background-color: #fff;
+    margin: 10px 0;
+}
+
+
