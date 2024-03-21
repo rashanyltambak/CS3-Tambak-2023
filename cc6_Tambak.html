@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Challenge 6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: lightseagreen;
+            text-align: center;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quadratic Formula</h1>
+
+    <button onclick="promptUser()">Enter the values of a, b, and c</button>
+
+    <h4 id="result"></h4>
+
+    <script>
+        function promptUser() {
+            const a = prompt("Enter the value of a:");
+            const b = prompt("Enter the value of b:");
+            const c = prompt("Enter the value of c:");
+
+            if (a !== null && b !== null && c !== null) {
+                calculateQuadratic(+a, +b, +c);
+            }
+        }
+
+        function calculateQuadratic(a, b, c) {
+            const discriminant = b * b - 4 * a * c;
+            let output;
+
+            if (discriminant > 0) {
+                const x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                const x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                output = "x1 = " + x1 + ", x2 = " + x2;
+            } else if (discriminant === 0) {
+                const x = -b / (2 * a);
+                output = "x1 = x2 = " + x;
+            } else {
+                output = "The values of x1 and x2 are imaginary.";
+            }
+
+            document.getElementById("result").textContent = output;
+        }
+    </script>
+</body>
+</html>
