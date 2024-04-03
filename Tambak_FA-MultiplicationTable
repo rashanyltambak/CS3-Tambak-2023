@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+  <title>TAMBAK: Multiplication Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    td {
+      color: #333; 
+    }
+    /* colors for columns */
+    .col-1 {
+      background-color: #ffe6e6; 
+    }
+    .col-2 {
+      background-color: #e6f7ff; 
+    }
+    .col-3 {
+      background-color: #ffffcc; 
+    }
+    .col-4 {
+      background-color: #ccffcc; 
+    }
+    .col-5 {
+      background-color: #ffccff; 
+    }
+    .col-6 {
+      background-color: #ccffff; 
+    }
+    .col-7 {
+      background-color: #ffd699; 
+    }
+    .col-8 {
+      background-color: #b3b3ff; 
+    }
+    .col-9 {
+      background-color: #d9b3ff; 
+    }
+    .col-10 {
+      background-color: #ffb3b3; 
+    }
+  </style>
+</head>
+<body>
+  <h1>TAMBAK: Multiplication Table</h1>
+  <button id="generateButton" onclick="generateMultiplicationTable()">Click to Generate!!</button>
+  <div id="tableContainer"></div>
+
+  <script>
+    function generateMultiplicationTable() {
+      let n = parseInt(prompt("Enter the number of rows (2-10): "));
+      while (n < 2 || n > 10) {
+        n = parseInt(prompt("Invalid input. Enter number of rows (2-10): "));
+      }
+
+      let m = parseInt(prompt("Enter the number of columns (2-10): "));
+      while (m < 2 || m > 10) {
+        m = parseInt(prompt("Invalid input. Enter number of columns (2-10): "));
+      }
+
+      let tableContent = "<table>";
+      for (let i = 1; i <= n; i++) {
+        tableContent += "<tr>";
+        for (let j = 1; j <= m; j++) 
+        {
+          tableContent += "<td class='col-" + j + "'>" + (i * j) + "</td>";
+        }
+        tableContent += "</tr>";
+      }
+      tableContent += "</table>";
+
+      document.getElementById("tableContainer").innerHTML = tableContent;
+    }
+  </script>
+</body>
+</html>
+
