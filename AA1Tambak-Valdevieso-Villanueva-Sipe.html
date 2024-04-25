@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+    <title>Simple Supplies Inventory System</title>
+    <style>
+        body {
+            font-family: Courier, monospace;
+            background-image: url("https://w.forfun.com/fetch/a2/a291aaf13a67a9ea44fde1c577a8a7da.jpeg");
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 45px;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        #buttons {
+            text-align: center;
+        }
+
+        button {
+            display: inline-block;
+            margin: 10px;
+            padding: 5px 10px; 
+            font-size: 16px;
+            font-family: Courier, monospace;
+            font-weight: bold;
+            background-color: #f27f2f;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 3%;
+            margin-left: auto; 
+            margin-right: auto;
+            color: black;
+            background-color: #d52a7b;
+        }
+        
+        th {
+            border: 1px solid ;
+            padding: 8px;
+            text-align: left;
+            background-color: #cc2f7c;
+        }
+
+        td {
+            border: 1px solid ;
+            padding: 8px;
+            text-align: left;
+            background-color: #f27f2f;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Supplies Inventory System</h1>
+    <div id="buttons">
+        <button onclick="addItemPrompt()">Add Item</button>
+        <button onclick="addNoOfItemPrompt()">Add Quantity</button>
+        <button onclick="subNoOfItemPrompt()">Remove Quantity</button>
+        <button onclick="removeItemPrompt()">Remove Item</button>
+    </div>
+    <div id="inventoryTable"></div>
+
+    <script>
+        var supply = [];
+
+        function addItem(name, num) {
+            var existingItem = supply.find(item => item.itemName === name);
+            if (existingItem) {
+                existingItem.noOfItem += num;
+            } else {
+                supply.push({ itemName: name, noOfItem: num });
+            }
+            displayItems();
+        }
+
+        function addNoOfItem(name, num) {
+            var existingItem = supply.find(item => item.itemName === name);
+            if (existingItem) {
+                existingItem.noOfItem += num;
+                displayItems();
+            } else {
+                console.log("Item not found in inventory.");
+            }
+        }
+
+        function subNoOfItem(name, num) {
+            var existingItem = supply.find(item => item.itemName === name);
+            if (existingItem) {
+                if (existingItem.noOfItem >= num) {
+                    existingItem.noOfItem -= num;
+                    displayItems();
+                } else {
+                    console.log("Insufficient items in inventory.");
+                }
+            } else {
+                console.log("Item not found in inventory.");
+            }
+        }
+
+        function removeItem(name) {
+            supply = supply.filter(item => item.itemName !== name);
+            displayItems();
+        }
+
+        function displayItems() {
+            var table = "<table><tr><th>Item Name</th><th>No. of Items</th></tr>";
+            supply.forEach(item => {
+                table += "<tr><td>" + item.itemName + "</td><td>" + item.noOfItem + "</td></tr>";
+            });
+            table += "</table>";
+            document.getElementById("inventoryTable").innerHTML = table;
+        }
+
+        function addItemPrompt() {
+            var name = prompt("Enter the item name:");
+            var num = parseInt(prompt("Enter the number of items:"));
+            addItem(name, num);
+        }
+
+        function addNoOfItemPrompt() {
+            var name = prompt("Enter the item name:");
+            var num = parseInt(prompt("Enter the number of items to add:"));
+            addNoOfItem(name, num);
+        }
+
+        function subNoOfItemPrompt() {
+            var name = prompt("Enter the item name:");
+            var num = parseInt(prompt("Enter the number of items to remove:"));
+            subNoOfItem(name, num);
+        }
+
+        function removeItemPrompt() {
+            var name = prompt("Enter the item name to remove:");
+            if (name) {
+                var existingItem = supply.find(item => item.itemName === name);
+                if (existingItem) {
+                    removeItem(name);
+                } 
+            }
+        }
+    </script>
+</body>
+</html>
+
