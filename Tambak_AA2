@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('https://getwallpapers.com/wallpaper/full/4/8/a/604507.jpg');
+    background-size: cover;
+    color: #333;
+  }
+  * {box-sizing: border-box;}
+  
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 20px;
+    margin: 5px 0 22px 0;
+    border: 2px solid #7b5bbb; 
+    border-radius: 20px;
+    background: #F0FFFF;
+  }
+  button {
+    background-color: #1e452f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  button:hover {
+    opacity: 1;
+  }
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #e2c514;
+  }
+  .cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+  }
+  .container {
+    padding: 16px;
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto 15% auto;
+    border: 1px solid #888;
+    font-weight: bold;
+    width: 80%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .error {
+    border-color: red !important;
+  }
+  .success {
+    border-color: green !important;
+  }
+  .summary-item {
+    margin-bottom: 10px;
+  }
+  .summary-label {
+    font-weight: bold;
+  }
+  .summary-info {
+    margin-left: 10px;
+  }
+  /* Adjust top padding for modal content */
+  .modal-content fieldset {
+    padding-top: 30px;
+  }
+</style>
+</head>
+<body>
+
+  <form id="signupForm" class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Oceanic Exploration: Sign Up Form</h1>
+      <p>Join us in exploring the wonders of the ocean! Sign up today to start your aquatic adventure.</p>
+      <hr>
+      
+      <fieldset>
+        <legend>User Information</legend>
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" id="name" placeholder="Enter Name" name="name" required onblur="checkInput(this)" onfocus="resetColor(this)">
+        
+        <label for="username"><b>Preferred Username</b></label>
+        <input type="text" id="username" placeholder="Enter Username" name="username" required onblur="checkInput(this)" onfocus="resetColor(this)">
+        
+        <br><label for="gender"><b>Sex</b></label></br>
+        <input type="radio" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" name="gender" value="other" checked>
+        <label for="other">Prefer not to mention</label><br><br>
+        
+        <label for="password"><b>Password</b></label>
+        <input type="password" id="password" placeholder="Enter Password" name="password" required onblur="checkInput(this)" onfocus="resetColor(this)">
+        
+        <label for="email"><b>Email</b></label>
+        <input type="text" id="email" placeholder="Enter Email" name="email" required onblur="checkInput(this)" onfocus="resetColor(this)">
+        
+        <label for="address"><b>Address</b></label>
+        <input type="text" id="address" placeholder="Enter Address" name="address" required onblur="checkInput(this)" onfocus="resetColor(this)">
+        
+        <label for="interest"><b>Interest</b></label>
+        <input type="text" id="interest" placeholder="Enter a short paragraph on your interests" name="interest" required onblur="checkInput(this)" onfocus="resetColor(this)">
+      </fieldset>
+
+      <div class="clearfix">
+        <button type="button" onclick="resetForm()" class="cancelbtn">Reset</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+
+  <fieldset class="modal-content">
+    <legend>Information Summary</legend>
+    <div id="userInfo" class="summary-info"></div>
+  </fieldset>
+
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var formData = new FormData(this);
+    var userInfo = "";
+    for (var pair of formData.entries()) {
+        userInfo += "<div class='summary-item'><span class='summary-label'><strong>" + pair[0] + ":</strong></span> <span class='summary-info'>" + pair[1] + "</span></div>";
+    }
+    document.getElementById("userInfo").innerHTML = userInfo;
+});
+
+function resetForm() {
+    document.getElementById("signupForm").reset();
+    document.getElementById("userInfo").innerHTML = "";
+}
+
+function checkInput(inputElement) {
+    if (inputElement.value === "") {
+        inputElement.classList.add("error");
+    } else {
+        inputElement.classList.remove("error");
+        inputElement.classList.add("success");
+    }
+}
+
+function resetColor(inputElement) {
+    inputElement.classList.remove("error");
+    inputElement.classList.remove("success");
+}
+</script>
+
+</body>
+</html>
