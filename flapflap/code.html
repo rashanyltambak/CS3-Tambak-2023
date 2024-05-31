@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +26,7 @@
             background-size: cover;
             border-radius: 5px;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
 
         #instructions {
@@ -64,6 +67,7 @@
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
             display: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -71,10 +75,10 @@
 <body>
     <div id="game-container">
         <canvas id="gameCanvas" width="800" height="500"></canvas>
-        <div id="instructions">Press Space to Jump!</div>
+        <div id="instructions">Click Anywhere to Start and Jump!</div>
         <div id="score">Score: 0</div>
         <h1>Flappy Bird</h1>
-        <div id="game-over" class="game-over">Game Over<br>Press Space to Restart</div>
+        <div id="game-over" class="game-over">Game Over<br>Click Anywhere to Restart</div>
     </div>
 
     <script>
@@ -167,22 +171,22 @@
             gameLoop();
         }
 
-        document.addEventListener('keydown', function (e) {
-            if (e.key === ' ' && !isGameStarted && attempts < maxAttempts) {
+        document.addEventListener('click', function () {
+            if (!isGameStarted && attempts < maxAttempts) {
                 isGameStarted = true;
                 document.getElementById('instructions').style.display = 'none';
                 gameLoop();
             }
 
-            if (e.key === ' ' && attempts >= maxAttempts) {
+            if (attempts >= maxAttempts) {
                 restartGame();
             }
 
-            if (e.key === ' ' && isGameOver) {
+            if (isGameOver) {
                 restartGame();
             }
 
-            if (e.key === ' ' && !isGameOver) {
+            if (!isGameOver) {
                 bird.velocity = bird.lift;
             }
         });
